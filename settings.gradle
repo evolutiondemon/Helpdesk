@@ -1,0 +1,3 @@
+rootProject.name = 'Helpdesk'
+include 'com.vykin.mnis.helpdesk'
+
