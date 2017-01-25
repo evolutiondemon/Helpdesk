@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'tickets.label', default: 'Tickets')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#list-tickets" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
-        <div id="list-tickets" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:table collection="${ticketsList}" />
+<head>
+    <meta name="layout" content="default"/>
+</head>
 
-            <div class="pagination">
-                <g:paginate total="${ticketsCount ?: 0}" />
-            </div>
-        </div>
-    </body>
+<body>
+<g:render template="/templates/adminnav"/>
+
+<section>
+    <div class="mt-2 container">
+        <table id="grid-basic" class="table table-condensed table-bordered table-hover table-striped bootgrid-table"
+               data-toggle="bootgrid">
+            <thead>
+            <tr>
+                <th data-column-id="id" datatype="numeric">Ticket#</th>
+                <th data-column-id="description">Request Detail</th>
+                <th data-column-id="dateSubmitted">Date Submitted</th>
+                <th data-column-id="assignedTo">Assigned To</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <g:set var="i=0"/>
+            <g:each in="${tick}">
+                <tr>
+                    <td>${it.id}</td>
+                    <td>${it.description}</td>
+                    <td>${it.dateSubmitted}</td>
+                    <td>${it.assignedTo}</td>
+                </tr>
+            </g:each>
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script>
+    $("#grid-basic").bootgrid();
+</script>
+</body>
 </html>

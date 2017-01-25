@@ -10,6 +10,7 @@
 <div class="navbar navbar-inverse bg-inverse sticky-top mb-5">
 
     <div class="navbar-header">
+        <img src="/assets/favicon-120.png"/>
         <a class="navbar-brand" href="#">MNIS Helpdesk</a>
     </div>
 

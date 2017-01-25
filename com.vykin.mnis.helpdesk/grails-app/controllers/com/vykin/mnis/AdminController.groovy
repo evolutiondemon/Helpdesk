@@ -6,6 +6,7 @@ import org.springframework.security.core.Authentication
 import org.springframework.security.core.context.SecurityContext
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
+import org.springframework.security.ldap.userdetails.Person
 
 class AdminController {
 
@@ -14,10 +15,15 @@ class AdminController {
     def index() {
         if (isLoggedIn()) {
             def conf = getConf()
+            def user = MyUserDetails.canonicalName
 
-        def user = getPrincipal()
-        [displayname: user]
+            [displayname: conf]
     }}
+
+    def logout() {
+
+
+    }
 
 
     protected Authentication getAuthentication() {

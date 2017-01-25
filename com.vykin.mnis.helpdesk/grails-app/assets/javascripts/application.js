@@ -8,6 +8,9 @@
 //= require jquery-2.2.0.min
 //= require tether
 //= require bootstrap
+//= require jquery.bootgrid
+//= require jquery.bootgrid.fa
+//= tickets
 //= require_tree .
 //= require_self
 

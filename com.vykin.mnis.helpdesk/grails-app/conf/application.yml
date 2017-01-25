@@ -154,7 +154,6 @@ grails:
                     base: 'dc=empire,dc=local'
                     filter: 'sAMAccountName={0}' # for Active Directory you need this
                     searchSubtree: true
-                    attributesToReturn: ['mail', 'displayName', 'title']
                 useRememberMe: true
                 rememberMe:
                     detailsManager:
@@ -167,3 +166,5 @@ grails:
                         usernameAttribute: 'sAMAccountName={0}'
                 auth:
                     hideUserNotFoundExceptions: false
+                mapper:
+                    userDetailsClass: 'person'

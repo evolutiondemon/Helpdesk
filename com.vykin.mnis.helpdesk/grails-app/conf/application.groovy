@@ -2,7 +2,7 @@
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	[pattern: '/static/console/**', access: ['ROLE_ADMIN']],
+	[pattern: '/templates/**', access: ['ROLE_ADMIN']],
     [pattern: '/console/**', access: ['ROLE_ADMIN']],
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
